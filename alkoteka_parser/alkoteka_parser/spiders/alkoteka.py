@@ -36,8 +36,6 @@ class AlkotekaSpider(scrapy.Spider):
 
         max_pages = (total_items + per_page - 1) // per_page
 
-        #self.logger.info(f"Category {slug}: page {page} of {max_pages} (total items: {total_items})")
-
 
         for product in results:
             item = {
@@ -101,7 +99,5 @@ class AlkotekaSpider(scrapy.Spider):
         if len(product.get('text_blocks')) > 0 else ''}
         item['metadata'].update({f.get('filter'): f.get('title') for f in product.get('filter_labels', []) if
                                  f.get('filter') and f.get('title')})
-        #self.count += 1
-        #self.logger.info(f"Products processed: {self.count}")
 
         yield item

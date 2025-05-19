@@ -55,9 +55,10 @@ CONCURRENT_REQUESTS_PER_DOMAIN = 32
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    "alkoteka_parser.middlewares.AlkotekaParserDownloaderMiddleware": 400,
+    "alkoteka_parser.middlewares.middlewares.AlkotekaParserDownloaderMiddleware": 400,
     "scrapy.downloadermiddlewares.useragent.UserAgentMiddleware": None,
 }
+#"alkoteka_parser.middlewares.proxy_middleware.ProxyMiddleware": 350
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
